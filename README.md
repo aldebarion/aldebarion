@@ -28,9 +28,9 @@ guidelines [here](doc/guidelines.md).
  Even so, there is a first sass/css implementation.
  It includes basic widgets, animations, layout and default theme.
 
-* npm
-* bower
-* cdn
+```bash
+npm install aldebarion --save
+```
 
 >  More implementation with reactjs will come.
 
@@ -84,7 +84,7 @@ First you need to define your screen(s). Most of the time, you can use the next 
 A lot of widgets are already designed using the guidelines. The only tricky thing is to correctly build
 them in html because several of them have complicated html code (because of animation).
 
-Most of the time a widget is defined by one word. Then you can add class to customize this widgets like `fluid` to expand the widget width or . 
+Most of the time a widget is defined by one word. Then you can add class to customize this widgets like `fluid` to expand the widget width or .
 
 
 
