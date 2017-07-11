@@ -1,0 +1,100 @@
+@mixin transition($properties) {
+  -webkit-transition: $properties;
+  -o-transition: $properties;
+  -moz-transition: $properties;
+  transition: $properties;
+}
+
+@mixin transform($properties) {
+  -webkit-transform: $properties;
+  -moz-transform: $properties;
+  transform: $properties;
+}
+
+@mixin fade ($duration) {
+  @include transition(opacity linear $duration);
+
+}
+
+@mixin fadeIn () {
+  opacity: 1;
+  @include fade;
+}
+
+@mixin fadeOut () {
+  opacity: 0;
+  @include fade;
+}
+
+@mixin fadeInProgress ($childIndex, $duration) {
+  transition-delay: (1 + $childIndex) * $duration;
+}
+
+@mixin fadeOutProgress ($childIndex, $duration) {
+  transition-delay: $childIndex * $duration;
+}
+
+.ad {
+  &.fade {
+
+    &.parent {
+
+      .child {
+        opacity: 1;
+
+        &.slow {
+          @include fade($longDuration);
+        }
+
+        &:not(.slow) {
+          @include fade($defaultDuration);
+        }
+      }
+
+
+      &.hide {
+        .child {
+          opacity: 0;
+        }
+      }
+
+      @for $childrenCount from 1 through $maxChildren {
+        &[data-count="#{$childrenCount}"] {
+          &.progressIn {
+            @for $index from 1 through $childrenCount {
+
+              &.slow {
+                .child[data-child="#{$index}"] {
+                  @include fadeInProgress($index - 1, $longDuration);
+                }
+              }
+
+              &:not(.slow) {
+                .child[data-child="#{$index}"] {
+                  @include fadeInProgress($index - 1, $longDuration);
+                }
+              }
+
+            }
+          }
+
+          &.progressOut {
+            @for $index from 1 through $childrenCount {
+              &.slow {
+                .child[data-child="#{$childrenCount - $index + 1}"] {
+                  @include fadeOutProgress($index - 1, $defaultDuration);
+                }
+              }
+
+              &:not(.slow) {
+                .child[data-child="#{$childrenCount - $index + 1}"] {
+                  @include fadeOutProgress($index - 1, $longDuration);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,244 @@
+.ad.button {
+  box-sizing: border-box;
+  background-color: transparent;
+  padding: 12px 20px;
+  border: 2px solid $foreground;
+  cursor: pointer;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  // z-index: 40;
+  // @include z('button');
+  z-index: z('button');
+  text-align: center;
+  font-size: 1em;
+
+  /* prevent a href style */
+  outline: none;
+  text-decoration: none;
+  vertical-align: middle;
+
+  @include noSelect;
+
+  &:not(:last-child) {
+    margin-bottom: $formMargin;
+  }
+
+  .ad.buttonLabel {
+    position: relative;
+    z-index: z('button') + 1;
+    @include fontBold;
+    color: $foreground;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-size: 0.95em;
+  }
+
+  .ad.buttonIcon {
+    position: relative;
+    z-index: z('button') + 1;
+    color: $foreground;
+    vertical-align: middle;
+    font-weight: 700;
+    margin-left: 5px;
+  }
+
+  &:hover {
+    // background-color: $primary;
+    .ad.buttonLabel, .ad.buttonIcon {
+      @include transition(color linear $defaultDuration);
+      color: $background;
+    }
+  }
+  &:before {
+    content: " ";
+    display: inline-block;
+    z-index: z('button') - 1;
+    position: absolute;
+    width: 500%;
+    height: 500%;
+    bottom: 0%;
+    right: 120%;
+
+    // top: -200%;
+    // right: 120%;
+    // width: 1000px;
+    // height: 1000px;
+    background: $foreground;
+    @include transform(rotate(-30deg));
+    @include transition(right linear $defaultDuration);
+    transform-origin: bottom right;
+
+    // right: 0;
+    // bottom: 0;
+  }
+
+  &:after {
+    content: " ";
+    display: inline-block;
+    z-index: z('button') - 1;
+    position: absolute;
+    width: 300%;
+    height: 100%;
+    bottom: 0%;
+    right: 120%;
+    margin-right: 100px;
+
+    background: $foreground;
+    @include transition(right linear $defaultDuration);
+    transform-origin: bottom right;
+  }
+
+  &:hover {
+    &:before {
+      right: -40%;
+    }
+
+    &:after {
+      right: -40%;
+    }
+  }
+
+  &:not(.fluid) {
+    &:not(:last-child) {
+      margin-right: $formMargin;
+    }
+  }
+
+  &.fluid {
+    display: block;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: $formMargin;
+    }
+  }
+
+
+}
+
+
+
+/*.ad.button {
+  background-color: @inputBackground;
+  color: @inputColor;
+  text-transform: uppercase;
+  padding: 7px 20px;
+  cursor: pointer;
+  .transition(background-color, @defaultDuration);
+  text-decoration: none;
+  outline: none;
+  opacity: 1;
+
+  // &:nth-child(1) {
+  //   background: white;
+  // }
+  // &:nth-child(2) {
+  //   background: white;
+  // }
+  // &:nth-child(3) {
+  //   background: white;
+  // }
+  // &:nth-child(4) {
+  //   background: white;
+  // }
+
+  &:hover {
+    background-color: darken(@inputBackground, 2%);
+  }
+
+  &.fluid {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  &.large {
+    font-size: 1.3em;
+    padding: 10px 25px;
+  }
+}
+
+.ad.button + .ad.button {
+  margin-right: 10px;
+}
+
+.ad.button.fuild + .ad.button.fuild {
+  margin-top: 10px;
+}
+
+.ad.button.large + .ad.button.large {
+  margin-right: 15px;
+}
+
+.ad.button.large.fluid + .ad.button.large.fluid {
+  margin-top: 15px;
+}
+
+
+.ad.segment when (@animate = true) {
+
+  // .showIteration (@properties, @duration, @i:1) when (@i <= length(@properties)) {
+  //
+  //     @property: extract(@properties, @i);
+  //
+  //     -webkit-transition+: @property @duration;
+  //     -o-transition+: @property @duration;
+  //     -moz-transition+: @property @duration;
+  //     transition+: @property @duration;
+  //
+  //     .transition(@properties, @duration, @i + 1);
+  // }
+
+  & {
+    .ad.button {
+      .transition(opacity, @defaultDuration);
+    }
+  }
+
+  &.ng-hide {
+    .ad.button {
+      opacity: 0;
+    }
+  }
+
+  &.ng-hide-remove {
+    .ad.button {
+      &:nth-child(1) {
+        transition-delay: 0s;
+      }
+
+      &:nth-child(2) {
+        transition-delay: @defaultDuration;
+      }
+
+      &:nth-child(3) {
+        transition-delay: @defaultDuration * 2;
+      }
+
+      &:nth-child(4) {
+        transition-delay: @defaultDuration * 3;
+      }
+    }
+  }
+
+  &.ng-hide-add {
+    .ad.button {
+      &:nth-child(4) {
+        transition-delay: 0s;
+      }
+
+      &:nth-child(3) {
+        transition-delay: @defaultDuration;
+      }
+
+      &:nth-child(2) {
+        transition-delay: @defaultDuration * 2;
+      }
+
+      &:nth-child(1) {
+        transition-delay: @defaultDuration * 3;
+      }
+    }
+  }
+}*/

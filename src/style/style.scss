@@ -1,0 +1,128 @@
+
+/* animations */
+$defaultDuration: 0.2s;
+$longDuration: 0.4s;
+$veryLongDuration: 10s;
+
+$defaultFunction: linear;
+
+$maxChildren: 200;
+
+/* colors */
+$primary: black;
+$background: white;
+
+$spinnerImg: url('');
+
+$sqrt2: 1.414213562;
+
+$animate: true;
+$version: '1.2.2';
+
+// import constants
+// @import "./constants";
+
+// import animations functions
+@import "./layout";
+
+// import animations functions
+@import "./animation";
+
+// import globals functions and constants
+@import "./globals";
+
+@import "./themes/dark-side";
+
+// font-family: 'Rajdhani', sans-serif;
+// font-family: 'Maven Pro', sans-serif;
+// font-family: 'Exo 2', sans-serif;
+// font-family: 'Julius Sans One', sans-serif;
+// font-family: 'Cutive Mono', monospace;
+
+html, body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
+  @include font;
+}
+
+.ad.body {
+
+  background: $background;
+
+  @import "./platforms/computer";
+
+  // &.dark-side {
+  // }
+
+  // &.awakening {
+  //   @import "./themes/awakening.less";
+  // }
+
+  @include font;
+
+  .ad.screen {
+    color: $primary;
+  }
+
+  .ad.workspace {
+    // @include layoutCenter;
+    // z-index: 100;
+  }
+
+/*
+  .ad.login {
+    width: 300px;
+    text-align: center;
+    display: block!important;
+    opacity: 1;
+    max-width: 1000px;
+    $properties: opacity, max-width;
+    // .transition(max-width, 0.1s);
+
+    &.ng-hide {
+      max-width: 0px;
+    }
+
+    &.ng-hide-add {
+      transition-delay: 3 * $defaultDuration;
+    }
+
+    &.ng-hide-remove {
+
+    }
+  }*/
+
+  // @import './widgets/form';
+  // @import './widgets/splash';
+  // @import './widgets/card';
+  // @import './widgets/segment';
+  @import './widgets/button';
+  @import './widgets/titles';
+  @import './widgets/radio';
+  @import './widgets/switch';
+  @import './widgets/checkbox';
+  @import './widgets/input';
+  @import './widgets/textarea';
+  @import './widgets/progressbar';
+  @import './widgets/stepbar';
+  @import './widgets/icon';
+  @import './widgets/eyecatcher';
+  @import './widgets/tooltip';
+  @import './widgets/target';
+  @import './widgets/carrousel';
+
+  //
+  // .ad.version {
+  //   .font;
+  //   color: @inputColor;
+  //   .font-typewriter;
+  // }
+  //
+  // .ad.host {
+  //   .font;
+  //   color: @inputColor;
+  //   .font-typewriter;
+  // }
+}

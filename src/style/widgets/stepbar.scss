@@ -1,0 +1,42 @@
+.ad.stepbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .ad.stepbarStep {
+    box-sizing: border-box;
+    flex: 1 1 50px;
+    margin: 10px 0px;
+    height: 1px;
+    // background-color: $foreground_hue2;
+    background-color: $foreground_hue1;
+    text-align: center;
+
+    .ad.stepbarIndicator {
+      display: inline-block;
+      box-sizing: border-box;
+      opacity: 1;
+      $width: 6px;
+      width: $width;
+      height: $width;
+      background-color: $foreground_hue2;
+      @include transform(rotate(45deg));
+      position: relative;
+      top: -$width/$sqrt2 + 2;
+      cursor: pointer;
+
+      $properties: background-color $defaultFunction $defaultDuration, width $defaultFunction $defaultDuration, height $defaultFunction $defaultDuration, top $defaultFunction $defaultDuration;
+      @include transition($properties);
+
+      &:hover, &.active {
+        background-color: white;
+        $newWidth: 10px;
+        width: $newWidth;
+        height: $newWidth;
+        top: -$newWidth/$sqrt2 + 3;
+
+      }
+    }
+  }
+}

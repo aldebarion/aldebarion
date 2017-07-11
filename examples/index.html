@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <link href="/style.css" rel="stylesheet">
+    <style>
+
+    .workspace {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    </style>
+  </head>
+  <body class="ad body dark-side">
+    <div class="ad screen computer">
+      <!-- <div class="ad splash"></div> -->
+
+      <div class="ad workspace">
+        <div class="ad segment fade hide parent slow" data-count="4" id="segment">
+          <a class="ad button fluid child" data-child="1">
+            <span class="ad buttonLabel">
+              login page with angular.js
+            </span>
+          </a>
+          <a class="ad button fluid child" href="widgets.html" data-child="2">
+            <span class="ad buttonLabel">
+              All widgets
+            </span>
+          </a>
+          <a class="ad button fluid child" data-child="3">
+            <span class="ad buttonLabel">
+              Dashboard with react.js
+            </span>
+          </a>
+          <a class="ad button fluid child" data-child="4">
+            <span class="ad buttonLabel">
+              Dashboard with react.js
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    setTimeout(function () {
+      document.getElementById('segment').classList.remove('progressOut');
+      document.getElementById('segment').classList.add('progressIn');
+      document.getElementById('segment').classList.remove('hide');
+    }, 200);
+
+    // setTimeout(function () {
+    //   document.getElementById('segment').classList.remove('progressIn');
+    //   document.getElementById('segment').classList.add('progressOut');
+    //   document.getElementById('segment').classList.add('hide');
+    // }, 10000);
+  </script>
+</html>

@@ -1,0 +1,100 @@
+.ad.carrousel {
+  display: flex;
+  align-items: stretch;
+
+
+  @function multiply ($var1, $var2) {
+    @return $var1 * $var2;
+  }
+
+  @function divide ($var1, $var2) {
+    @return $var1 / $var2;
+  }
+
+  @mixin children ($childCount) {
+
+    &[data-count="#{$childCount}"] {
+      .ad.carrouselList {
+        width: multiply($childCount, 100) * 1%;
+
+        .ad.carrouselSlide {
+          width: divide(100, $childCount) * 1%;
+        }
+      }
+    }
+  }
+
+  @mixin current ($childCurrent) {
+    &[data-current="#{$childCurrent}"] {
+      .ad.carrouselList {
+        left: multiply($childCurrent - 1, 100) * -1%;
+      }
+
+      .ad.stepbar {
+
+      }
+    }
+  }
+
+  @for $i from 1 through $maxChildren {
+    @include children($i);
+    @include current($i);
+  }
+
+  .ad.carrouselNavigationButton {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $foreground;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .ad.carrouselNavigationBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .ad.stepbar {
+      max-width: 500px;
+      margin: auto;
+    }
+  }
+
+  .ad.carrouselContent {
+    flex: 1 1 auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ad.carrouselList {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include transition(left ease $longDuration);
+    // width: 100%;
+  }
+
+  .ad.carrouselSlide {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ad.carrouselSlideContent {
+    @include font;
+    color: $foreground;
+  }
+}

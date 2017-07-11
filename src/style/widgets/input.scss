@@ -1,0 +1,195 @@
+.ad.input {
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 2px solid $foreground;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  // z-index: 40;
+  // @include z('button');
+  z-index: z('button');
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  vertical-align: middle;
+  &:not(:last-child) {
+    margin-bottom: $formMargin;
+  }
+
+  $inputWidth: 350px;
+  $buttonWidth: 45px;
+
+  width: $inputWidth;
+
+  .ad.inputContent {
+    display: flex;
+    position: relative,
+  }
+
+  .ad.inputSubContent {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative,
+  }
+
+  .ad.inputValue {
+    flex: 1 1;
+    padding: 12px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: $foreground;
+    @include font;
+    display: inline-block;
+    font-size: 0.95em;
+    // text-transform: uppercase;
+
+    &::placeholder, &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &:-moz-placeholder { /* Chrome/Opera/Safari */
+      color: blue; //$foreground_hue2;
+      text-transform: uppercase;
+    }
+  }
+
+  &.evaluation {
+
+    .ad.inputEvaluation {
+      position: absolute;
+      bottom: 5px;
+      left: 13px;
+      right: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .ad.inputEvaluationStep {
+      flex: 1 1 auto;
+      height: 2px;
+      background: $foreground_hue1;
+
+      &:not(:last-child) {
+        margin-right: 3px;
+      }
+
+      &.active {
+        background: $foreground;
+      }
+    }
+
+  }
+
+  .ad.inputIcon {
+    // height: 100%;
+    flex: 0 0 $buttonWidth;
+    width: $buttonWidth;
+    background: $foreground;
+    display: inline-block;
+    background-color: $foreground;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      font-weight: 700;
+      color: $background;
+    }
+  }
+
+
+  .ad.inputButton {
+    // height: 100%;
+    flex: 0 0 $buttonWidth;
+    width: $buttonWidth;
+    background: $foreground;
+    display: inline-block;
+    cursor: pointer;
+    background-color: $foreground;
+    opacity: 1;
+    $properties: opacity $defaultFunction $defaultDuration;
+    @include transition($properties);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      font-weight: 700;
+      color: $background;
+      @include transition(color $defaultFunction $defaultDuration);
+    }
+  }
+
+  .ad.inputIndicator {
+    flex: 0 0 $buttonWidth;
+    width: $buttonWidth;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      opacity: 0;
+      font-weight: 700;
+      color: $foreground;
+      @include transition(opacity $defaultFunction $defaultDuration);
+    }
+  }
+
+  &.ko {
+    .ad.inputButton {
+      opacity: 0;
+      cursor: default;
+      i {
+        color: $foreground_hue2;
+      }
+    }
+
+    .ad.inputIndicator {
+      i {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.ok {
+    .ad.inputButton {
+      cursor: pointer;
+      opacity: 1;
+    }
+    .ad.inputIndicator {
+      i {
+        opacity: 1;
+      }
+    }
+  }
+
+  &:not(.fluid) {
+    &:not(:last-child) {
+      margin-right: $formMargin;
+    }
+  }
+
+  &.fluid {
+    display: block;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: $formMargin;
+    }
+  }
+}
+
+.ad.inputHelp {
+  color: $foreground_hue2;
+  font-size: 0.9em;
+  opacity: 0;
+  padding-top: 5px;
+  padding-left: 15px;
+  @include transition(opacity $defaultFunction $defaultDuration);
+
+  &.ok, &.ko {
+    opacity: 1;
+  }
+}
+
+.ad.inputContainer {
+  display: inline-block;
+}

@@ -1,0 +1,83 @@
+.ad.icon {
+  display: inline-block;
+  text-align: center;
+  min-width: 100px;
+
+  .ad.iconIcon {
+    font-size: 1.3em;
+    color: $foreground;
+    @include transition(opacity $defaultFunction $defaultDuration);
+  }
+
+  .ad.iconLabel {
+    @include font;
+    color: $foreground;
+    padding-top: 5px;
+    @include transition(opacity $defaultFunction $defaultDuration);
+    opacity: 0;
+  }
+
+  &:hover {
+    .ad.iconLabel {
+      opacity: 1;
+    }
+  }
+
+  &.interactive {
+    cursor: pointer;
+  }
+
+  &.discreet:not(.hexa) {
+
+    .ad.iconIcon {
+      opacity: 0.4;
+    }
+
+    &:hover {
+      .ad.iconIcon {
+        opacity: 1;
+      }
+
+      .ad.iconLabel {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.hexa {
+    $iconWidth: 50px;
+    height: $iconWidth;
+    width: $iconWidth;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    .ad.iconHexa {
+      height: $iconWidth;
+      width: $iconWidth;
+      background: url('/img/hexagone.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      .ad.iconIcon {
+        font-size: 0.9em;
+      }
+    }
+
+    &.discreet {
+      .ad.iconHexa {
+        @include transition(opacity $defaultFunction $defaultDuration);
+        opacity: 0.4;
+      }
+
+      &:hover .ad.iconHexa {
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+.ad.input {
+  background: @inputBackground;
+  color: @inputColor;
+  border: 1px solid @inputColor;
+  outline: none;
+  border-radius: 2px;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 37px;
+  overflow: hidden;
+
+  &.fluid {
+    width: 100%;
+    // display: block;
+  }
+
+
+  input[type=text], input[type=password] {
+    display: flex;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: @inputColor;
+    font-size: 1.2em;
+    .font;
+    flex: 1;
+    margin: 5px;
+    -webkit-text-security: square;
+  }
+
+  button {
+    display: flex;
+    align-self: center;
+    @color:  @inputColor;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: @color;
+    opacity: 1;
+    cursor: pointer;
+    font-size: 1.2em;
+    &:hover {
+      color: lighten(@color, 40%);
+    }
+  }
+
+  // input:not(:placeholder-shown) + button {
+  //   opacity: 0;
+  // }
+
+  & when (@animate = true) {
+
+    @properties: width, height, border-color;
+    .transition(@properties, @defaultDuration);
+
+    button {
+      .transition(opacity, @defaultDuration);
+    }
+
+    &.ng-hide {
+      height: 0px!important;
+      border-color: transparent;
+
+      button {
+        opacity: 0!important;
+      }
+
+      &.fluid {
+        width: 0%!important;
+      }
+    }
+
+    &.ng-hide-remove {
+      transition-delay: @defaultDuration, 0s, 0s;
+
+      button {
+        transition-delay: 2 * @defaultDuration ;
+      }
+    }
+
+    &.ng-hide-add {
+      transition-delay: @defaultDuration, 2 * @defaultDuration, 2 * @defaultDuration;
+
+      button {
+        transition-delay: 0 ;
+      }
+    }
+  }
+}
+
+
+.ng-hide {
+
+  .ad.input {
+    height: 0px!important;
+    border-color: transparent;
+
+    button {
+      opacity: 0!important;
+    }
+
+    &.fluid {
+      width: 0%!important;
+    }
+  }
+}
+
+.ng-hide-remove, .ng-hide-remove-active {
+
+  .ad.input {
+    transition-delay: @defaultDuration, 0s, 0s;
+
+    button {
+      transition-delay: 2 * @defaultDuration ;
+    }
+  }
+
+}
+
+.ng-hide-add, .ng-hide-add-active {
+
+  // transition-delay: 3 * @defaultDuration;
+
+  .ad.input {
+    transition-delay: @defaultDuration, 2 * @defaultDuration, 2 * @defaultDuration;
+
+    button {
+      transition-delay: 0 ;
+    }
+  }
+}

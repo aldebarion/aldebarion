@@ -1,0 +1,58 @@
+h1 {
+  color: $foreground;
+  text-transform: uppercase;
+  font-size: 2.4em;
+  margin: 0;
+  padding: 0 0 20px 0;
+  @include fontExtraBold;
+}
+
+h2 {
+  color: $foreground_hue2;
+  font-size: 1.7em;
+  margin: 0;
+  padding: 0 0 20px 0;
+  @include fontBold;
+
+}
+
+h3 {
+  color: $foreground;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  margin: 0;
+  padding: 0 0 10px 0;
+  @include fontExtraBold;
+}
+
+p {
+  color: $foreground;
+  font-size: 1.0em;
+  @include font;
+  line-height: 1.4em;
+  text-align: justify;
+}
+
+p.ad.light {
+  @include font;
+  color: $foreground_hue3;
+  font-size: 0.97em;
+}
+
+strong {
+  @include fontExtraBold;
+  text-transform: uppercase;
+}
+
+p a {
+  color: inherit;
+  text-decoration: none;
+
+  &:not([href=""]) {
+    cursor: pointer;
+    @include fontBold;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
