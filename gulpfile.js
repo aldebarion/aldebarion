@@ -1,7 +1,6 @@
 var gulp = require('gulp'),
   connect = require('gulp-connect'),
-  sass = require('gulp-sass'),
-  less = require('gulp-less');
+  sass = require('gulp-sass');
 
 gulp.task('connect', function() {
   connect.server({
@@ -15,12 +14,6 @@ gulp.task('sass', function () {
   return gulp.src('./src/style/style.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./dist/'));
-});
-
-gulp.task('less', function () {
-  return gulp.src('./src/style/style.less')
-  .pipe(less())
-  .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('html', function () {

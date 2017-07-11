@@ -1,11 +1,13 @@
 {
   "name": "aldebarion",
   "version": "0.1.0",
-  "description": "frontend framework optimized for interfaces of the future",
-  "main": "index.js",
+  "description": "The frontend framework built for the future",
+  "main": "dist/style.css",
   "scripts": {
     "start": "gulp start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp sass",
+    "postinstall": "gulp sass"
   },
   "repository": {
     "type": "git",
@@ -22,12 +24,10 @@
     "url": "https://github.com/aldebarion/aldebarion/issues"
   },
   "homepage": "https://github.com/aldebarion/aldebarion#readme",
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-less": "^3.3.0",
-    "gulp-watch": "^4.3.11"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-watch": "^4.3.11",
     "gulp-connect": "^5.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-webserver": "^0.9.1"

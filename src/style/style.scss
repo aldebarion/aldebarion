@@ -6,30 +6,22 @@ $veryLongDuration: 10s;
 
 $defaultFunction: linear;
 
-$maxChildren: 200;
-
 /* colors */
 $primary: black;
 $background: white;
 
 $spinnerImg: url('');
 
+/* positioning and layout */
 $sqrt2: 1.414213562;
-
-$animate: true;
-$version: '1.2.2';
-
-// import constants
-// @import "./constants";
-
-// import animations functions
-@import "./layout";
-
-// import animations functions
-@import "./animation";
+$formMargin: 10px;
+$maxChildren: 200;
 
 // import globals functions and constants
 @import "./globals";
+
+// import animations functions
+@import "./animation";
 
 @import "./themes/dark-side";
 
@@ -66,34 +58,6 @@ html, body {
     color: $primary;
   }
 
-  .ad.workspace {
-    // @include layoutCenter;
-    // z-index: 100;
-  }
-
-/*
-  .ad.login {
-    width: 300px;
-    text-align: center;
-    display: block!important;
-    opacity: 1;
-    max-width: 1000px;
-    $properties: opacity, max-width;
-    // .transition(max-width, 0.1s);
-
-    &.ng-hide {
-      max-width: 0px;
-    }
-
-    &.ng-hide-add {
-      transition-delay: 3 * $defaultDuration;
-    }
-
-    &.ng-hide-remove {
-
-    }
-  }*/
-
   // @import './widgets/form';
   // @import './widgets/splash';
   // @import './widgets/card';
@@ -112,17 +76,4 @@ html, body {
   @import './widgets/tooltip';
   @import './widgets/target';
   @import './widgets/carrousel';
-
-  //
-  // .ad.version {
-  //   .font;
-  //   color: @inputColor;
-  //   .font-typewriter;
-  // }
-  //
-  // .ad.host {
-  //   .font;
-  //   color: @inputColor;
-  //   .font-typewriter;
-  // }
 }
