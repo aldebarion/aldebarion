@@ -1,6 +1,6 @@
 {
   "name": "aldebarion",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The frontend framework built for the future",
   "main": "dist/style.css",
   "scripts": {
@@ -24,8 +24,7 @@
     "url": "https://github.com/aldebarion/aldebarion/issues"
   },
   "homepage": "https://github.com/aldebarion/aldebarion#readme",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "gulp": "^3.9.1",
     "gulp-watch": "^4.3.11",
     "gulp-connect": "^5.0.0",
