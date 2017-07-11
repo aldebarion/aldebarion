@@ -1,13 +1,13 @@
 {
   "name": "aldebarion",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The frontend framework built for the future",
   "main": "dist/style.css",
   "scripts": {
-    "start": "gulp start",
+    "start": "node_modules/.bin/gulp start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp sass",
-    "postinstall": "gulp sass"
+    "build": "node_modules/.bin/gulp sass",
+    "postinstall": "node_modules/.bin/gulp sass"
   },
   "repository": {
     "type": "git",
