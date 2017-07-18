@@ -10,15 +10,7 @@ This framework helps you to:
 * implement user interfaces for long life application and productivity based on maximum ergonomy and timeless design
 * increase efficiency with adaptive interfaces based on human experience
 
-In order to success it, the framework is based on:
-
-1. minimal set of colors and high contrast
-2. smart transitions and elegance
-3. full responsiveness taking account of large screens and HUDs FOV
-4. several levels of reading and adaptability
-
-> This framework is still in development. Point 1 is finished and point 2 is progressing.
-Do not hesitate to involve yourself in the project.
+> This project is still in development so do not hesitate to involve yourself.
 
 ## Getting started
 
@@ -35,37 +27,39 @@ npm install aldebarion --save
 
 You must follow aldebarion guidelines in order to get a continuity in user experience.
 
-Multiplatform:
+### Multiplatform
 
 * ensure responsiveness compatible with all platforms including computers, smartphone, tablets, large screens and HUDs.
 * use a minimal set of contrasted colors to manage even the most lightning environments
 
-Ergonomy:
+### Ergonomy
 
 * accompany the look of the user: display everything with transition
 * do not use no frills except to catch the user attention
-
-Adaptation to user:
-
+* use geometrical shapes
 * integrate several levels of reading
-* make interface adaptable to user
+
+### Adaptation to user
+
+* make interface adaptable/adaptive to user
 
 ## Documentation
 
 ### Semantic language
 
-Since this project is a sass implementation, you may interact with it only through a combination of class names
+Since this project is a sass implementation, you interact with it through a combination of class names
 and attributes. The wording of this implementation is inspired by [Semantic-ui](https://semantic-ui.com/).
 It is based on natural language and very simple to use.
 
 However, this project is specialized on animations so
-you need to use complex html components. In order to help understand what you can change and what you cannot,
+you need to use complex html components. In order to help you understanding what you can change and what you cannot,
 the framework uses non-natural language for internal components you should not modify.
 
 *Example:*
 ```html
 <button class="ad button"> <!-- you may add classes here to change the default behavior -->
-  <span class="ad buttonLabel"> <!-- you should not change this class, the only thing you can do is to remove it if you don't want it -->
+  <span class="ad buttonLabel"> <!-- you should not change this class, the only
+                                  thing you can do is to remove it if you don't want it -->
     simple button
   </span>
 </button>
@@ -77,8 +71,8 @@ the framework uses non-natural language for internal components you should not m
 
 A first level of responsiveness is implemented.
 
+*Example:*
 ```html
-
 <html>
   <!-- head code -->
   <body class="ad body">
