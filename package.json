@@ -1,6 +1,6 @@
 {
   "name": "aldebarion",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "The frontend framework built for the future",
   "main": "dist/style.css",
   "scripts": {
