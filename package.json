@@ -7,7 +7,7 @@
     "start": "node_modules/.bin/gulp start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node_modules/.bin/gulp sass",
-    "postinstall": "node_modules/.bin/gulp sass"
+    "postinstall": "node_modules/.bin/gulp build"
   },
   "repository": {
     "type": "git",
@@ -26,9 +26,10 @@
   "homepage": "https://github.com/aldebarion/aldebarion#readme",
   "dependencies": {
     "gulp": "^3.9.1",
-    "gulp-watch": "^4.3.11",
+    "gulp-clean-css": "^3.6.0",
     "gulp-connect": "^5.0.0",
     "gulp-sass": "^3.1.0",
+    "gulp-watch": "^4.3.11",
     "gulp-webserver": "^0.9.1"
   },
   "directories": {

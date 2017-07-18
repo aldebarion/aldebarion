@@ -1,6 +1,8 @@
 var gulp = require('gulp'),
   connect = require('gulp-connect'),
-  sass = require('gulp-sass');
+  sass = require('gulp-sass'),
+  cleanCSS = require('gulp-clean-css');
+
 
 gulp.task('connect', function() {
   connect.server({
@@ -15,6 +17,13 @@ gulp.task('sass', function () {
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./dist/'));
 });
+
+
+gulp.task('build', ['sass'], function () {
+  return gulp.src('./dist/style.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('./dist/style.min.css'));
+})
 
 gulp.task('html', function () {
   gulp.src('./examples/*.html')

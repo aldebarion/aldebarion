@@ -12,27 +12,43 @@ This framework helps you to:
 
 In order to success it, the framework is based on:
 
-1. minimal colors and high contrast
+1. minimal set of colors and high contrast
 2. smart transitions and elegance
 3. full responsiveness taking account of large screens and HUDs FOV
-4. several level of reading and adaptability
+4. several levels of reading and adaptability
 
 > This framework is still in development. Point 1 is finished and point 2 is progressing.
-Do not hesitate to propose to involve yourself.
+Do not hesitate to involve yourself in the project.
 
 ## Getting started
 
-This project is more about guidelines than real implementation. You can find all
-guidelines [here](doc/guidelines.md).
-
- Even so, there is a first sass/css implementation.
+This project is more about guidelines than real implementation. Even so, A first sass/css implementation is available.
  It includes basic widgets, animations, layout and default theme.
 
 ```bash
 npm install aldebarion --save
 ```
 
->  More implementation with reactjs will come.
+>  More implementations with reactjs will come.
+
+## Guidelines
+
+You must follow aldebarion guidelines in order to get a continuity in user experience.
+
+Multiplatform:
+
+* ensure responsiveness compatible with all platforms including computers, smartphone, tablets, large screens and HUDs.
+* use a minimal set of contrasted colors to manage even the most lightning environments
+
+Ergonomy:
+
+* accompany the look of the user: display everything with transition
+* do not use no frills except to catch the user attention
+
+Adaptation to user:
+
+* integrate several levels of reading
+* make interface adaptable to user
 
 ## Documentation
 
@@ -40,7 +56,9 @@ npm install aldebarion --save
 
 Since this project is a sass implementation, you may interact with it only through a combination of class names
 and attributes. The wording of this implementation is inspired by [Semantic-ui](https://semantic-ui.com/).
-It is based on natural language and very simple to use. However, this project is specialized on animations so
+It is based on natural language and very simple to use.
+
+However, this project is specialized on animations so
 you need to use complex html components. In order to help understand what you can change and what you cannot,
 the framework uses non-natural language for internal components you should not modify.
 
@@ -57,7 +75,7 @@ the framework uses non-natural language for internal components you should not m
 
 ### Responsiveness
 
-First you need to define your screen(s). Most of the time, you can use the next code without questions:
+A first level of responsiveness is implemented.
 
 ```html
 
@@ -83,10 +101,6 @@ First you need to define your screen(s). Most of the time, you can use the next 
 
 A lot of widgets are already designed using the guidelines. The only tricky thing is to correctly build
 them in html because several of them have complicated html code (because of animation).
-
-Most of the time a widget is defined by one word. Then you can add class to customize this widgets like `fluid` to expand the widget width or .
-
-
 
 * [guidelines](doc/guidelines.md)
 * [platforms](doc/platforms/platforms.md)
