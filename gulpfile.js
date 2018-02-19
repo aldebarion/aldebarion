@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
   connect = require('gulp-connect'),
   sass = require('gulp-sass'),
-  cleanCSS = require('gulp-clean-css');
+  cleanCSS = require('gulp-clean-css'),
+  sourcemaps = require('gulp-sourcemaps');
 
 
 gulp.task('connect', function() {
@@ -15,6 +16,7 @@ gulp.task('connect', function() {
 gulp.task('sass', function () {
   return gulp.src('./src/style/style.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist/'));
 });
 
@@ -22,6 +24,7 @@ gulp.task('sass', function () {
 gulp.task('build', ['sass'], function () {
   return gulp.src('./dist/style.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist/style.min.css'));
 })
 

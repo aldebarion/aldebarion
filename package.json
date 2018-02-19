@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node_modules/.bin/gulp start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node_modules/.bin/gulp sass",
+    "build": "node_modules/.bin/gulp build",
     "postinstall": "node_modules/.bin/gulp build"
   },
   "repository": {
@@ -29,6 +29,7 @@
     "gulp-clean-css": "^3.6.0",
     "gulp-connect": "^5.0.0",
     "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
     "gulp-watch": "^4.3.11",
     "gulp-webserver": "^0.9.1"
   },
