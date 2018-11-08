@@ -10,11 +10,12 @@ This framework helps you to:
 * implement user interfaces for long life application and productivity based on maximum ergonomy and timeless design
 * increase efficiency with adaptive interfaces based on human experience
 
-## Getting started
+## How to install?
 
-This framework is currently available for React with [react-aldebarion](https://github.com/aldebarion/react-aldebarion).
+This framework is currently available for:
+* React with [react-aldebarion](https://github.com/aldebarion/react-aldebarion).
 
-It is also planned to be available on Vue.js and maybe some 3D javascript engines for VR.
+> It is also planned to be available on Vue.js and maybe some 3D javascript engines for VR.
 
 ## Guidelines
 
