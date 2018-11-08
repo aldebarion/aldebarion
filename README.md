@@ -2,7 +2,7 @@
 
 Aldebarion is the front-end framework built for the future.
 
-![Smark desk](examples/assets/table.png)
+![Smark desk](assets/table.png)
 
 This framework helps you to:
 
