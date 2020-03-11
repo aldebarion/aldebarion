@@ -1,0 +1,81 @@
+// https://www.learnstorybook.com/intro-to-storybook/
+@import url(https://indestructibletype.com/fonts/Jost.css);
+
+.Ad_Box {
+  background: rgb(111, 44, 172);
+  font-family: Jost, sans-serif;
+}
+
+.Ad_Button {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  transform: translate3d(0px, 0px, 0px);
+  vertical-align: top;
+  white-space: nowrap;
+  user-select: none;
+  opacity: 1;
+  font-size: 14px;
+  line-height: 1;
+  color: rgb(51, 51, 51);
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  border-radius: 3em;
+  overflow: hidden;
+  padding: 13px 20px;
+  text-decoration: none;
+  transition: all 150ms ease-out 0s;
+  margin: 0px;
+  outline: none;
+  color: rgb(30, 167, 253);
+  background: rgb(255, 255, 255);
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 1.1em;
+
+  &:hover {
+    transform: translate3d(0px, -2px, 0px);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 6px 0px;
+  }
+}
+
+.Ad_NavigationIndicators {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  position: relative;
+  width: 3.5rem;
+
+  color: white;
+
+  &_Item {
+    display: block;
+    cursor: pointer;
+
+    box-sizing: border-box;
+    height: 4px;
+    background: white;
+    width: 60%;
+
+    $margin: 1.1rem;
+
+    margin-top: $margin;
+    margin-bottom: $margin;
+
+    border: 0;
+    outline: 0;
+
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+
+    &_active {
+      width: 100%;
+    }
+  }
+}

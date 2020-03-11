@@ -1,0 +1,88 @@
+// https://neumorphism.io/
+
+.Ad_Box {
+  background-color: #ebecf0;
+}
+
+.Ad_Button {
+  box-sizing: border-box;
+  min-width: 0px;
+  -webkit-appearance: none;
+  text-align: center;
+  line-height: inherit;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  font-weight: 400;
+  color: #707281;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  height: min-content;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: rgba(106, 108, 124, 0.5) 8px 8px 12px -2px,
+    white -8px -8px 12px -2px;
+  text-decoration: none;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  background: linear-gradient(90deg, rgb(241, 241, 243), rgb(229, 229, 234));
+  padding: 14px;
+  margin: 14px 18px;
+  border-radius: 1000px;
+  outline: none;
+
+  &:active {
+    box-shadow: rgba(106, 108, 124, 0.5) 4px 4px 6px -1px inset,
+      white -4px -4px 6px -1px inset;
+    padding-top: 16px;
+    padding-bottom: 12px;
+    background: linear-gradient(90deg, rgb(230, 230, 234), rgb(218, 218, 225));
+  }
+}
+
+.Ad_NavigationIndicators {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  position: relative;
+
+  &_Item {
+    display: block;
+    cursor: pointer;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    $margin: 0.3rem;
+
+    margin-top: $margin;
+    margin-bottom: $margin;
+
+    border: 0;
+    outline: 0;
+
+    $width: 17px;
+
+    width: 17px;
+    height: 17px;
+
+    border-radius: 150px;
+    background: #ebecf0;
+    box-shadow: 2px 2px 3px #c8c9cc, -2px -2px 3px #ffffff;
+
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+
+    &_active {
+      border-radius: 150px;
+      background: #ebecf0;
+      box-shadow: inset 2px 2px 3px #c8c9cc, inset -2px -2px 3px #ffffff;
+    }
+  }
+}

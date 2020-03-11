@@ -1,0 +1,13 @@
+.Ad_Button {
+  $background: red;
+  background: $background;
+  color: white;
+  border: 0;
+  padding: 1rem 2rem;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($background, 5%);
+  }
+}

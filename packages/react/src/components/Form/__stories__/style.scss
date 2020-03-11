@@ -1,0 +1,35 @@
+.Ad_Form {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+
+  width: 200px;
+}
+
+$marginBottom: 1rem;
+
+.Ad_Input {
+  width: 100%;
+  display: flex;
+
+  border: 1px solid blue;
+
+  margin-bottom: $marginBottom;
+}
+
+.Ad_Input_input {
+  flex: 1 1 auto;
+  outline: none;
+  border: 0;
+  padding: 0.5rem;
+}
+
+.Ad_Input_ToggleVisibityButton {
+  border: 0;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.Ad_Button {
+}

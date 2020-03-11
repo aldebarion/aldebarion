@@ -1,52 +1,44 @@
-# Aldebarion
+<h1 align="center">
+  Aldebarion
+</h1>
+<div align="center">
+<a href="https://lernajs.io/"><img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="Maintained with lerna"/><a/>
+<a href="./LICENSE">
+  <img src="https://img.shields.io/github/license/aldebarion/aldebarion.svg" alt="MIT License" />
+</a>
+</div>
 
-Aldebarion is the front-end framework built for the future.
+<br>
 
-![Smark desk](assets/table.png)
+Aldebarion is a frontend framework opinionated about usability features
+and highly customizable about style. It also makes React components easier to
+manipulate as a developer.
 
-This framework helps you to:
+It is opinionated because it integrates the best standards for form validation,
+accessibility, etc: all the things your users expect but don't notice. It will
+save your time and energy.
 
-* design interfaces for futuristic smart screens, touch tables and HUDs.
-* implement user interfaces for long life application and productivity based on maximum ergonomy and timeless design
-* increase efficiency with adaptive interfaces based on human experience
+It is highly customizable because it includes several themes and can be updated
+using LESS, SASS, CSS or JS-based styles.
 
-## How to install?
+One more thing ! Even if all Aldebarion components are optimized to work
+together, you can integrate a specific component without messing up the style of
+the rest of your application, at the opposite of a lot of frameworks,
 
-This framework is currently available for:
-* React with [react-aldebarion](https://github.com/aldebarion/react-aldebarion).
+## Getting started
 
-> It is also planned to be available on Vue.js and maybe some 3D javascript engines for VR.
+Aldebarion is currently implemented only for React.
 
-## Guidelines
+## Contributing
 
-You must follow aldebarion guidelines in order to get a continuity in user experience.
+This project is only at the beginning so do not hesitate to contribute or propose improvements.
+Please follow [guidelines](CONTRIBUTING.md).
 
-### Minimalism
+```
+cd packages/react
+storybook:serve
+```
 
-* kind of scandinavian refined style
-* limit of austere
-* clean
-* straight
+## License
 
-### Efficiency
-
-* give priority to efficiency
-* long-term interface
-
-### Multi devices
-
-* ensure responsiveness compatible with all platforms including computers, smartphone, tablets, large screens, ambient devices and HUDs.
-* use a minimal set of contrasted colors to manage even the most lightning environments
-* ensure continuity between devices: the user can begin on one device and then switch to another device without degradation of experience
-
-### Ergonomy
-
-* accompany the look of the user: display everything with transition
-* do not use no frills except to catch the user attention
-* use geometrical shapes
-* integrate several levels of reading
-
-## Documentation
-
-* [icons](http://themify.me/themify-icons)
-* [js animations](https://greensock.com/docs/TweenLite)
+This project is distributed on MIT license.

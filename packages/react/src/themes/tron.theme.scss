@@ -1,0 +1,66 @@
+$background: #162335;
+$border: lighten(#a1a42a, 10%);
+$foreground: #5d828f;
+
+.Ad_Box {
+  background-color: lighten($background, 5%);
+}
+
+.Ad_Button {
+  outline: none;
+  font-weight: bold;
+  font-size: 1.1em;
+
+  padding: 1rem;
+
+  border: 0;
+  outline: 0;
+  background-color: $background;
+  color: $foreground;
+
+  border-bottom: 0.35rem $border solid;
+
+  &:hover {
+    color: lighten($foreground, 15%);
+  }
+
+  cursor: pointer;
+}
+
+.Ad_NavigationIndicators {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  position: relative;
+  width: 11px;
+
+  &_Item {
+    display: block;
+    cursor: pointer;
+    padding: 0;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.1rem;
+    background-color: currentColor;
+
+    $margin: 0.2rem;
+
+    margin-top: $margin;
+    margin-bottom: $margin;
+
+    border: 0;
+    outline: 0;
+
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+
+    opacity: 0.4;
+
+    &_active {
+      opacity: 0.7;
+    }
+  }
+}

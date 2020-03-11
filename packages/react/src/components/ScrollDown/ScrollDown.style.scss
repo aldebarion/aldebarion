@@ -1,0 +1,17 @@
+.ScrollDown {
+  display: flex;
+  align-items: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  text-transform: uppercase;
+
+  &::after {
+    position: relative;
+    content: ' ';
+    display: block;
+    width: 0.1rem;
+    background-color: currentColor;
+    height: 5rem;
+    margin-top: 0.75rem;
+  }
+}

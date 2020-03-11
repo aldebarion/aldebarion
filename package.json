@@ -1,0 +1,24 @@
+{
+  "name": "aldebarion",
+  "version": "0.2.0",
+  "main": "index.js",
+  "repository": "git@github.com:aldebarion/aldebarion.git",
+  "author": "Thibault Friedrich <thibault.friedrich@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "release": "standard-version",
+    "commitlint": "commitlint --from d71478a18e990c113ea57f0ba2d13130cb1573bf"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "npx commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/travis-cli": "^8.0.0",
+    "husky": "^3.0.0",
+    "standard-version": "^7.0.0"
+  }
+}
