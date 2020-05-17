@@ -5,7 +5,7 @@ import Label from '../index'
 
 export default {
   component: Label,
-  title: 'Components|Label',
+  title: 'Components/Label',
 }
 
 export const Default = () => {

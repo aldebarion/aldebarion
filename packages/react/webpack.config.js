@@ -33,11 +33,15 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader',
+      },
     ],
   },
   externals: ['react', 'prop-types'],
   resolve: {
     modules: ['node_modules', './src'],
-    extensions: ['.js', '.jsx', '.scss', '.json'],
+    extensions: ['.js', '.jsx', '.scss', '.json', '.svg'],
   },
 }

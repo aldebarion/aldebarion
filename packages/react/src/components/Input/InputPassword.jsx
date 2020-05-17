@@ -1,62 +1,124 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-import { useLang, useStyle } from 'behaviors'
+import { sizes } from 'config'
 
-import InputDefault from './InputDefault'
+import { useLang, useStyle, withEnhancedProps } from 'behaviors'
+import Icon from 'components/Icon'
 
-const ToggleVisibilityButton = ({ onClick, label, isVisible }) => {
+import Input from './Input'
+
+const confirmation = password => ({
+  type: 'confirmation',
+  eval: value => value === password,
+  partialEval: value => {
+    const response = password.includes(value)
+    console.log('response', response, password, value)
+
+    return response
+  },
+})
+
+const ToggleVisibilityButton = ({ onClick, isVisible }) => {
+  const styled = useStyle('Input_ToggleVisibityButton')
+  const styledIcon = useStyle('Input_ToggleVisibityButtonIcon')
   const { tr } = useLang()
 
-  const styledInput = useStyle('Input_ToggleVisibityButton', {})
+  const label = isVisible ? tr('Hide password') : tr('Show passord')
 
-  const labelShort = isVisible ? tr('Hide') : tr('Show')
+  const type = isVisible ? 'eyeOff' : 'eye'
 
   return (
-    <button {...styledInput} aria-label={label} type="button" onClick={onClick}>
-      {labelShort}
+    <button
+      {...styled}
+      aria-label={label}
+      type="button"
+      onClick={onClick}
+      tabIndex="-1"
+    >
+      <Icon {...styledIcon} type={type} />
     </button>
   )
 }
 
 ToggleVisibilityButton.propTypes = {
   onClick: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired,
   isVisible: PropTypes.bool.isRequired,
 }
 
-const InputPassword = React.forwardRef(
-  ({ passwordVisibilityToggable, passwordVisible, ...props }) => {
-    const [isVisible, toggleVisibility] = useState(passwordVisible)
+const ForgotButton = ({ onClick }) => {
+  const styled = useStyle('Input_ForgotButton')
+  const { tr } = useLang()
 
+  return (
+    <button {...styled} type="button" onClick={onClick} tabIndex="-1">
+      {tr('Forgot?')}
+    </button>
+  )
+}
+
+ForgotButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+}
+
+const InputPassword = React.forwardRef(
+  ({ hidePasswordVisibility, hideForgot, onForgot, ...props }, ref) => {
+    const [isVisible, toggleVisibility] = useState(false)
     const { tr } = useLang()
 
-    const label = isVisible ? tr('Hide password') : tr('Show passord')
+    const [value, setValue] = useState(props.value || '')
+
+    useEffect(() => setValue(props.value), [props.value])
+
+    const onChange = newValue => {
+      setValue(newValue)
+      props.onChange(newValue)
+    }
 
     return (
       <>
-        <InputDefault {...props} type={isVisible ? 'text' : 'password'}>
-          {passwordVisibilityToggable ? (
+        <Input
+          placeholder={tr('Password')}
+          {...props}
+          onChange={onChange}
+          type={isVisible ? 'text' : 'password'}
+          ref={ref}
+        >
+          {!hideForgot && !value && !props.value ? (
+            <ForgotButton onClick={onForgot} />
+          ) : null}
+          {!hidePasswordVisibility && (props.value || value) ? (
             <ToggleVisibilityButton
               onClick={() => toggleVisibility(!isVisible)}
-              label={label}
               isVisible={isVisible}
             />
           ) : null}
-        </InputDefault>
+        </Input>
       </>
     )
   }
 )
 
 InputPassword.defaultProps = {
-  passwordVisibilityToggable: true,
-  passwordVisible: false,
+  size: 'normal',
+  onChange: () => {},
+  value: '',
+  onForgot: () => {},
+  hidePasswordVisibility: false,
+  hideForgot: false,
 }
 
 InputPassword.propTypes = {
-  passwordVisibilityToggable: PropTypes.bool,
-  passwordVisible: PropTypes.bool,
+  size: PropTypes.oneOf(sizes),
+  onChange: PropTypes.func,
+  value: PropTypes.string,
+  onForgot: PropTypes.func,
+  hidePasswordVisibility: PropTypes.bool,
+  hideForgot: PropTypes.bool,
 }
 
-export default InputPassword
+const ExternalInputPassword = withEnhancedProps(InputPassword)
+
+ExternalInputPassword.Rules = { confirmation }
+
+export default ExternalInputPassword

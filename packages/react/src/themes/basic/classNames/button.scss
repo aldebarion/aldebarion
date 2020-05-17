@@ -1,0 +1,202 @@
+@import './constants';
+
+.Ad_Button {
+  border: 0;
+  outline: none;
+
+  cursor: pointer;
+
+  @include fontFamily;
+
+  user-select: none;
+  border-radius: $borderRadius;
+
+  overflow: hidden;
+  position: relative;
+
+  &_progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &.huge {
+    font-size: 18px;
+
+    &:not(.link) {
+      height: 60px;
+      padding: 18px 30px;
+      font-weight: 600;
+      line-height: 21px;
+    }
+  }
+
+  &.huge &_progress {
+    height: 4px;
+  }
+
+  &.large {
+    font-size: 17px;
+
+    &:not(.link) {
+      height: 50px;
+      padding: 15px 25px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+  }
+
+  &.large &_progress {
+    height: 4px;
+  }
+
+  &.normal {
+    font-size: 16px;
+
+    &:not(.link) {
+      height: 40px;
+      padding: 11px 20px;
+      line-height: 19px;
+    }
+  }
+
+  &.normal &_progress {
+    height: 3px;
+  }
+
+  &.small {
+    font-size: 14px;
+
+    &:not(.link) {
+      height: 30px;
+      padding: 6px 16px;
+      line-height: 18px;
+    }
+  }
+
+  &.small &_progress {
+    height: 2px;
+  }
+
+  &:disabled,
+  &.containsProgress {
+    cursor: not-allowed;
+  }
+
+  &.danger {
+    box-shadow: rgba(10, 10, 10, 0.12) 0px 2px 4px 0px;
+    color: white;
+
+    &:not(:disabled):not(.containsProgress) {
+      background-color: $danger;
+
+      &:hover,
+      &:focus {
+        background-color: $danger_hue1;
+      }
+
+      &:active {
+        background-color: $danger_hue2;
+      }
+    }
+
+    &:disabled,
+    &.containsProgress {
+      background-color: $danger_hue-1;
+    }
+  }
+
+  &.danger &_progress {
+    background-color: $danger_hue3;
+  }
+
+  &.primary {
+    box-shadow: rgba(10, 10, 10, 0.12) 0px 2px 4px 0px;
+    color: white;
+
+    &:not(:disabled):not(.containsProgress) {
+      background-color: $primary;
+
+      &:hover,
+      &:focus {
+        background-color: $primary_hue1;
+      }
+
+      &:active {
+        background-color: $primary_hue2;
+      }
+    }
+
+    &:disabled,
+    &.containsProgress {
+      background-color: $primary_hue-1;
+    }
+  }
+
+  &.primary &_progress {
+    background-color: $primary_hue3;
+  }
+
+  &.secondary {
+    color: white;
+    box-shadow: rgba(10, 10, 10, 0.12) 0px 2px 4px 0px;
+
+    &:not(:disabled):not(.containsProgress) {
+      background-color: $secondary;
+
+      &:hover,
+      &:focus {
+        background-color: $secondary_hue1;
+      }
+
+      &:active {
+        background-color: $secondary_hue2;
+      }
+    }
+
+    &:disabled,
+    &.containsProgress {
+      background-color: $secondary_hue-1;
+    }
+  }
+
+  &.secondary &_progress {
+    background-color: $secondary_hue3;
+  }
+
+  &.basic {
+    box-shadow: $border 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.03) 0px 2px 6px;
+    $color: rgb(41, 56, 69);
+
+    &:not(:disabled):not(.containsProgress) {
+      background: $background;
+      color: $color;
+
+      &:hover,
+      &:focus {
+        box-shadow: rgb(211, 219, 226) 0px 0px 0px 1px inset,
+          rgba(0, 0, 0, 0.06) 0px 2px 6px;
+      }
+    }
+
+    &:disabled,
+    &.containsProgress {
+      color: #c0c0c0;
+    }
+  }
+
+  &.basic &_progress {
+    background-color: $primary_hue3;
+  }
+
+  &.link {
+    color: $link;
+
+    &:not(:disabled) {
+      &:hover {
+        color: $link_hue1;
+        // text-decoration: underline;
+      }
+    }
+  }
+}

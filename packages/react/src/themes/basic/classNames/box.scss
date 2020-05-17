@@ -1,0 +1,47 @@
+@import './constants';
+
+$padding: 20px;
+
+.Ad_Box {
+  background: $background;
+  padding: $padding;
+  border: 1px solid $border;
+  border-radius: 3px;
+  @include fontFamily;
+
+  &Title,
+  &Section {
+    &:first-child {
+      margin-top: -$padding;
+    }
+
+    &:not(:first-child) {
+      margin-top: 0;
+    }
+
+    margin-right: -$padding;
+    margin-left: -$padding;
+
+    padding: $padding;
+    @include fontFamily;
+    color: rgb(41, 56, 69);
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $border;
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-bottom: -$padding;
+    }
+  }
+
+  &Title {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  &Section {
+    font-size: 1.1rem;
+  }
+}

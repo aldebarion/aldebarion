@@ -1,0 +1,25 @@
+@import './button';
+@import './input';
+@import './box';
+@import './dialog';
+
+.Ad_Body {
+  background-color: $backgroung_hue1;
+}
+
+.Ad_FormItem {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.Ad_Icon {
+  $width: 1rem;
+  width: $width;
+  height: $width;
+}

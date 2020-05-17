@@ -10,20 +10,41 @@
 
 <br>
 
-Aldebarion is a frontend framework opinionated about usability features
-and highly customizable about style. It also makes React components easier to
-manipulate as a developer.
+Aldebarion helps frontend developers to focus on most valued features in user
+interfaces.
 
-It is opinionated because it integrates the best standards for form validation,
-accessibility, etc: all the things your users expect but don't notice. It will
-save your time and energy.
+Users expect usable, accessible and efficient user interfaces and in particular
+sign-in forms, sign-up forms, etc. But it takes time
+to implement them. But users don't care if behaviors are similar between websites.
+So Aldebarion provides opinionated components including the best interaction standards
 
-It is highly customizable because it includes several themes and can be updated
-using LESS, SASS, CSS or JS-based styles.
+The aestheticism of your website is part of your brand. So Aldebarion provides
+highly customizable components.
 
-One more thing ! Even if all Aldebarion components are optimized to work
-together, you can integrate a specific component without messing up the style of
-the rest of your application, at the opposite of a lot of frameworks,
+## Ux Guidelines
+
+### Heuristics
+
+All Adelbarion components are designed to follow following heuritics:
+
+- **minimalism**: display only necessary information
+- **error prevention**: prevent user mistakes or help him to recover from errors very fast
+- **feedbacks**: give feedbacks to every user interactions
+- **constraints**: limit at maximum user interaction possibilities to avoid him
+  to make mistakes
+- **affordance**: how to use components should be self explaining by the
+  component visual
+
+> Aldebarion heuritics are inspired from [Don
+> Norman heuristics](https://medium.com/@sachinrekhi/don-normans-principles-of-interaction-design-51025a2c0f33)
+> and [Jakob Nielsen's 10 general principles for interaction design](https://www.nngroup.com/articles/ten-usability-heuristics/).
+
+### Inspirations
+
+### Theme Customization
+
+Components styles are highly customizable by developers. Aldebarion provides
+several themes and customers can implement their own themes.
 
 ## Getting started
 
@@ -31,7 +52,7 @@ Aldebarion is currently implemented only for React.
 
 ## Contributing
 
-This project is only at the beginning so do not hesitate to contribute or propose improvements.
+This project is only starting so do not hesitate to contribute or propose improvements.
 Please follow [guidelines](CONTRIBUTING.md).
 
 ```

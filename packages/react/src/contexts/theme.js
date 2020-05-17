@@ -3,7 +3,9 @@ import React from 'react'
 export default React.createContext({
   classNames: {},
   styles: {},
-  customize: {
+  components: {},
+  behaviors: {
     labelRequired: text => `${text}*`,
   },
+  icons: {},
 })

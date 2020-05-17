@@ -12,7 +12,7 @@ import style from './style'
 
 export default {
   component: NavigationIndicators,
-  title: 'Components|NavigationIndicators',
+  title: 'Components/NavigationIndicators',
 }
 
 const pages = [

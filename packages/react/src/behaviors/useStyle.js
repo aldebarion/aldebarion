@@ -1,34 +1,30 @@
 import useTheme from './useTheme'
 
-const addPrefix = (object, name) => object[`Ad_${name}`]
+const addPrefix = name => `Ad_${name}`
 
-const extract = (object, name) => {
-  if (typeof name === 'string') {
-    return [addPrefix(object, name)]
-  }
-
-  if (Array.isArray(name)) {
-    return name.map(subname => addPrefix(object, subname))
-  }
-
-  return object
-}
-
-export default (componentName, { className, style }, defaultClassName) => {
+export default (
+  componentName,
+  props = { className: '', style: {} },
+  style = []
+) => {
   const { classNames, styles } = useTheme()
 
-  const themeClassNames = extract(classNames, componentName).join(' ')
+  const p = [addPrefix(componentName), ...style]
 
-  const themeStyles = extract(styles, componentName).reduce(
-    (acc, themeStyle) => ({
-      ...acc,
-      ...themeStyle,
-    }),
-    {}
-  )
+  const themeClassNames = p.map(n => classNames[n]).join(' ')
+
+  const themeStyles = p
+    .map(n => styles[n])
+    .reduce(
+      (acc, themeStyle) => ({
+        ...acc,
+        ...themeStyle,
+      }),
+      {}
+    )
 
   return {
-    className: `${defaultClassName} ${themeClassNames} ${className}`,
-    style: { ...themeStyles, ...style },
+    className: `${themeClassNames} ${props.className}`,
+    style: { ...themeStyles, ...props.style },
   }
 }

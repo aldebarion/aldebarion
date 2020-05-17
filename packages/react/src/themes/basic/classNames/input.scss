@@ -1,0 +1,255 @@
+@import './constants';
+
+.Ad_Input {
+  @include fontFamily;
+
+  display: inline-flex;
+  align-items: center;
+
+  color: #293845;
+
+  box-sizing: border-box;
+
+  $background: #edf1f5;
+
+  background-color: $background;
+  border-radius: 3px;
+  overflow: hidden;
+
+  position: relative;
+
+  &.error {
+    background-color: $error_hue-1;
+  }
+
+  &.focus:not(.readOnly) {
+    background-color: white;
+
+    &.partial {
+      box-shadow: inset 0 0 0 2px #9e96f7;
+    }
+
+    &.success {
+      box-shadow: inset 0 0 0 2px $success;
+    }
+
+    &.error {
+      box-shadow: inset 0 0 0 2px $error;
+    }
+  }
+
+  &.huge {
+    // min-width: 150px;
+    height: 60px;
+  }
+
+  &.large {
+    // min-width: 150px;
+    height: 50px;
+  }
+
+  &.normal {
+    // min-width: 150px;
+    height: 40px;
+  }
+
+  &.small {
+    min-width: 150px;
+    height: 30px;
+  }
+
+  &_input {
+    position: relative;
+    z-index: 20;
+    display: inline-block;
+    flex: 1 1 auto;
+    width: auto;
+
+    outline: none;
+    border: 0;
+    background-color: transparent;
+    box-sizing: border-box;
+
+    font-family: inherit;
+    font-weight: inherit;
+
+    ::placeholder {
+      color: $placeholder;
+    }
+  }
+
+  &_completion {
+    position: absolute;
+    z-index: 10;
+    color: $placeholder_hue-1;
+  }
+
+  &.huge &_input {
+    padding: 13px;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  &.large &_input {
+    padding: 13px;
+    font-size: 17px;
+    line-height: 20px;
+  }
+
+  &.normal &_input {
+    padding: 13px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &.small &_input {
+    width: 20px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &.huge &_completion {
+    padding: 13px;
+    font-size: 18px;
+  }
+
+  &_ToggleVisibityButton {
+    border: 0;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: $placeholder;
+  }
+
+  &_CopyClipboardButton {
+    @include fontFamily;
+    font-weight: 600;
+    height: 100%;
+    border: 0;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    background: $secondary;
+    color: white;
+    box-sizing: border-box;
+  }
+
+  &.huge &_ToggleVisibityButton {
+    // font-size: 13px;
+    // margin: 13px;
+    // margin-left: 0;
+    // width: 5rem;
+    margin-right: 13px;
+  }
+
+  &.large &_ToggleVisibityButton {
+    // font-size: 11px;
+    // margin: 10px;
+    // margin-left: 0;
+    // width: 4.5rem;
+    margin-right: 10px;
+  }
+
+  &.normal &_ToggleVisibityButton {
+    // font-size: 10px;
+    // margin: 5px;
+    // margin-left: 0;
+    // width: 4rem;
+    margin-right: 5px;
+  }
+
+  &.small &_ToggleVisibityButton {
+    // font-size: 10px;
+    // margin: 4px;
+    // margin-left: 0;
+    // width: 3.5rem;
+    margin-right: 4px;
+  }
+
+  &.huge &_ToggleVisibityButtonIcon {
+    // font-size: 13px;
+    // margin: 13px;
+    // margin-left: 0;
+    $width: 1.4rem;
+    width: $width;
+    height: $width;
+  }
+
+  &.large &_ToggleVisibityButtonIcon {
+    $width: 1.2rem;
+    width: $width;
+    height: $width;
+  }
+
+  &.normal &_ToggleVisibityButtonIcon {
+    $width: 1rem;
+    width: $width;
+    height: $width;
+  }
+
+  &.small &_ToggleVisibityButtonIcon {
+    $width: 0.9rem;
+    width: $width;
+    height: $width;
+  }
+
+  &.huge &_CopyClipboardButton {
+    font-size: 1rem;
+    flex: 0 0 5rem;
+    width: 5rem;
+  }
+
+  &.large &_CopyClipboardButton {
+    font-size: 0.9rem;
+    flex: 0 0 4.5rem;
+    width: 4.5rem;
+  }
+
+  &.normal &_CopyClipboardButton {
+    font-size: 0.8rem;
+    flex: 0 0 4rem;
+    width: 4rem;
+  }
+
+  &.small &_CopyClipboardButton {
+    font-size: 0.75rem;
+    flex: 0 0 3.5rem;
+    width: 3.5rem;
+  }
+
+  &_ForgotButton {
+    border: 0;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    color: lighten($placeholder, 7%);
+    padding: 0;
+    margin: 0;
+
+    &:hover {
+      color: darken($placeholder, 10%);
+    }
+  }
+
+  &.huge &_ForgotButton {
+    font-size: 0.9rem;
+    margin-right: 13px;
+  }
+
+  &.large &_ForgotButton {
+    font-size: 0.8rem;
+    margin-right: 13px;
+  }
+
+  &.normal &_ForgotButton {
+    font-size: 0.7rem;
+    margin-right: 13px;
+  }
+
+  &.small &_ForgotButton {
+    font-size: 0.65rem;
+    margin-right: 10px;
+  }
+}

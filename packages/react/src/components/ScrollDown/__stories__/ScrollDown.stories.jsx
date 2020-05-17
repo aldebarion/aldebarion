@@ -7,7 +7,7 @@ import style from './style'
 
 export default {
   component: ScrollDown,
-  title: 'Components|ScrollDown',
+  title: 'Components/ScrollDown',
 }
 
 export const Flat = () => {

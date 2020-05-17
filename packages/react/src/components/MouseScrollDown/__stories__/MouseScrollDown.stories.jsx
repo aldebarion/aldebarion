@@ -5,7 +5,7 @@ import style from './style'
 
 export default {
   component: MouseScrollDown,
-  title: 'Components|MouseScrollDown',
+  title: 'Components/MouseScrollDown',
 }
 
 export const Default = () => {

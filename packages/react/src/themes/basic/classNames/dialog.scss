@@ -1,0 +1,9 @@
+@import './constants';
+
+.Ad_Dialog {
+  // min-height: 10rem;
+  // min-width: 20rem;
+  &Container {
+    background-color: $primary;
+  }
+}

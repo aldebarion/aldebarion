@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
-import { useStyle, useCustomize } from 'behaviors'
+import { useStyle, useTheme } from 'behaviors'
 import LabelContext from 'contexts/label'
 
 const Label = ({ children, required, label, ...props }) => {
@@ -13,10 +13,10 @@ const Label = ({ children, required, label, ...props }) => {
   }, [])
 
   const styledSpan = useStyle('Label_span', {})
-  const { labelRequired } = useCustomize()
+  // const { labelRequired } = useTheme()
 
-  const realLabel =
-    required && typeof label === 'string' ? labelRequired(label) : label
+  const realLabel = ''
+  // required && typeof label === 'string' ? labelRequired(label) : label
 
   return (
     <label htmlFor={id} {...props} {...styled}>

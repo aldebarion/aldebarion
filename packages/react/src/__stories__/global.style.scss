@@ -1,0 +1,20 @@
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  min-height: 100vh;
+}
+
+.box {
+  min-width: 400px;
+}
+
+.line {
+  margin-bottom: 10px;
+}

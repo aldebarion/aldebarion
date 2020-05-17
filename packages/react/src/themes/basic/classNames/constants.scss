@@ -1,0 +1,43 @@
+$background: white;
+$backgroung_hue1: rgb(237, 241, 245);
+
+$border: rgb(223, 231, 237);
+
+$primary: rgb(155, 66, 227);
+$primary_hue1: darken($primary, 4%);
+$primary_hue2: darken($primary, 12%);
+$primary_hue3: darken($primary, 20%);
+$primary_hue-1: lighten($primary, 30%);
+
+// $primary_hue1: rgb(131, 19, 221);
+
+$secondary: #31b6a8;
+$secondary_hue1: darken($secondary, 4%); //  #1aae9f;
+$secondary_hue2: darken($secondary, 8%);
+$secondary_hue3: darken($secondary, 12%);
+$secondary_hue-1: lighten($secondary, 30%);
+
+$danger: rgb(211, 69, 91);
+$danger_hue1: darken($danger, 4%); //  #1aae9f;
+$danger_hue2: darken($danger, 8%);
+$danger_hue3: darken($danger, 12%);
+$danger_hue-1: lighten($danger, 30%);
+
+$success: #31b6a8;
+$error: $danger;
+$error_hue-1: #e8d2d9;
+
+$link: rgb(44, 136, 217);
+$link_hue1: rgb(131, 19, 221);
+
+$placeholder: #757575;
+$placeholder_hue-1: lighten(#757575, 20%);
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+
+@mixin fontFamily {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 500;
+}
+
+$borderRadius: 3px;

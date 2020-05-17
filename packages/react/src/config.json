@@ -1,0 +1,5 @@
+{
+  "sizes": ["huge", "large", "normal", "small"],
+  "types": ["primary", "secondary", "basic", "danger", "link"],
+  "ruleTypes": ["required", "minLength"]
+}

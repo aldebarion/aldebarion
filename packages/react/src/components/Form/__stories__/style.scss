@@ -33,3 +33,26 @@ $marginBottom: 1rem;
 
 .Ad_Button {
 }
+
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  min-height: 100vh;
+}
+
+.signin {
+  min-width: 350px;
+  padding: 40px;
+}
+
+.forgotPassword {
+  text-align: center;
+  padding-top: 30px;
+}
