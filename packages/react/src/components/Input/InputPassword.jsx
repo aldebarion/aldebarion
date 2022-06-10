@@ -11,12 +11,7 @@ import Input from './Input'
 const confirmation = password => ({
   type: 'confirmation',
   eval: value => value === password,
-  partialEval: value => {
-    const response = password.includes(value)
-    console.log('response', response, password, value)
-
-    return response
-  },
+  partialEval: value => password.includes(value),
 })
 
 const ToggleVisibilityButton = ({ onClick, isVisible }) => {

@@ -39,6 +39,29 @@ export const Text = () => {
   )
 }
 
+export const Email = () => {
+  return (
+    <ThemeProvider theme={basicTheme}>
+      <Body className={style.body}>
+        <Box className={style.box}>
+          <div className={style.line}>
+            <Input placeholder="Email" type="email" huge />
+          </div>
+          <div className={style.line}>
+            <Input placeholder="Email" type="email" large />
+          </div>
+          <div className={style.line}>
+            <Input placeholder="Email" type="email" />
+          </div>
+          <div className={style.line}>
+            <Input placeholder="Email" type="email" small />
+          </div>
+        </Box>
+      </Body>
+    </ThemeProvider>
+  )
+}
+
 export const Password = () => {
   return (
     <ThemeProvider theme={basicTheme}>

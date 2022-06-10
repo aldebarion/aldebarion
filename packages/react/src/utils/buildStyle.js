@@ -1,1 +1,0 @@
-export const (componentName, styles) => Object.keys(styles).reduceRight()

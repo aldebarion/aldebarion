@@ -4,7 +4,6 @@ import basicTheme from 'themes/basic'
 import ThemeProvider from 'components/ThemeProvider'
 import Dialog from 'components/Dialog'
 import Body from 'components/Body'
-import Box from 'components/Box'
 import Form from 'components/Form'
 import Button from 'components/Button'
 import Input from 'components/Input'
@@ -24,7 +23,9 @@ export const ConfirmationPopup = () => {
   return (
     <ThemeProvider theme={basicTheme}>
       <Body className={globalStyle.body}>
-        <Button onClick={show}>Open confirmation Dialog</Button>
+        <Button onClick={show} primary>
+          Open confirmation Dialog
+        </Button>
         <Dialog isVisible={isVisible} onClose={hide} className={style.Dialog}>
           Do you really want to delete selected file?
           <div className={style.actions}>
@@ -47,7 +48,9 @@ export const FormPopup = () => {
   return (
     <ThemeProvider theme={basicTheme}>
       <Body className={globalStyle.body}>
-        <Button onClick={show}>Open form Dialog</Button>
+        <Button onClick={show} primary>
+          Open form Dialog
+        </Button>
         <Dialog
           isVisible={isVisible}
           onClose={hide}

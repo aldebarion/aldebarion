@@ -9,13 +9,15 @@
   "module": "dist/aldebarion.m.js",
   "source": "src/index.js",
   "dependencies": {
-    "jest": "^25.3.0",
+    "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.1",
     "@babel/core": "^7.8.7",
+    "@babel/node": "^7.10.1",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-export-default-from": "^7.8.3",
     "@babel/plugin-proposal-export-namespace-from": "^7.8.3",
@@ -29,6 +31,7 @@
     "@testing-library/react": "^10.0.2",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
+    "babel-node": "^0.0.1-security",
     "babel-plugin-transform-export-extensions": "^6.22.0",
     "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
@@ -39,8 +42,9 @@
     "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^2.5.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
     "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.3.0",
     "node-sass": "^4.13.1",
     "preset-react": "^1.0.0",
     "prettier": "^1.19.1",
@@ -52,7 +56,7 @@
   },
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack --watch --mode development",
+    "dev": "yarn storybook:serve",
     "storybook:serve": "start-storybook -p 6006",
     "storybook:build": "build-storybook --docs -o ./.storybook/dist",
     "commitlint": "commitlint --from 04bf72d3d3d5e176b0df2d68adcd91370a14af92",
@@ -60,6 +64,8 @@
     "lint:fix": "eslint --fix **/*.js",
     "format": "prettier --check '**/*.js'",
     "format:fix": "prettier --write '**/*.js'",
-    "test": "jest src"
+    "test": "jest",
+    "feature": "jest src --json --outputFile=.output.json",
+    "feature:coverage": "npx babel-node scripts/extractFeatureCoverage.js"
   }
 }

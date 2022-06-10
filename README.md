@@ -9,9 +9,8 @@
 </div>
 
 <br>
-
-Aldebarion helps frontend developers to focus on most valued features in user
-interfaces.
+Build great Uis faster by reusing high customizable, accessibility and usability
+ready components.
 
 Users expect usable, accessible and efficient user interfaces and in particular
 sign-in forms, sign-up forms, etc. But it takes time
@@ -20,6 +19,13 @@ So Aldebarion provides opinionated components including the best interaction sta
 
 The aestheticism of your website is part of your brand. So Aldebarion provides
 highly customizable components.
+
+## Accessibility
+
+- a11y
+- [aria-role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles)
+- you can add aria-label to all components
+- focus optimized for user with visual disability
 
 ## Ux Guidelines
 

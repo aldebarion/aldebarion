@@ -14,7 +14,7 @@ const setupTest = props => {
 }
 
 describe('Input Credit Card', () => {
-  it('should display an iput', () => {
+  it('should display an input', () => {
     const { input } = setupTest()
 
     expect(input).toBeInTheDocument()

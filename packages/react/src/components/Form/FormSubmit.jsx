@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import Button from 'components/Button'
-
-import { useForm } from 'behaviors'
+import FormContext from 'contexts/form'
 
 const FormSubmit = props => {
-  const { errors } = useForm()
+  const { errors } = useContext(FormContext)
 
   return (
     <Button

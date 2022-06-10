@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { sizes, types, ruleTypes } from 'config'
+import FormContext from 'contexts/form'
 
-import useForm from './useForm'
-
-const enhance = props =>
-  Object.keys(props).reduce((newProps, propertyName) => {
+const enhance = props => {
+  return Object.keys(props).reduce((newProps, propertyName) => {
     if (sizes.includes(propertyName) && props[propertyName]) {
       if (props[propertyName]) {
         return {
@@ -51,16 +50,15 @@ const enhance = props =>
       [propertyName]: props[propertyName],
     }
   }, {})
+}
 
 export default Component =>
   React.forwardRef((props, ref) => {
-    const { size } = useForm()
+    const { size } = useContext(FormContext)
 
-    const formProps = {}
+    const formProps = size ? { size } : {}
 
-    if (size) {
-      formProps.size = size
-    }
+    const allProps = enhance({ ...formProps, ...props })
 
-    return <Component {...enhance({ ...formProps, ...props })} ref={ref} />
+    return <Component {...allProps} ref={ref} />
   })

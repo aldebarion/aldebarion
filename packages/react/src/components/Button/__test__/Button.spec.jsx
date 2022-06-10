@@ -31,7 +31,7 @@ describe('Button', () => {
     expect(progressBar.getAttribute('style')).toContain('width: 30%')
   })
 
-  it('should display button with type', () => {
+  it('should display button with type submit', () => {
     const { container } = render(<Button htmlType="submit" />)
 
     expect(container.querySelector('button').getAttribute('type')).toEqual(

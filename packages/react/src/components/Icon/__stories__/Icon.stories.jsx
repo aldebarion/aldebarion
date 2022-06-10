@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import basicTheme from 'themes/basic'
 import ThemeProvider from 'components/ThemeProvider'
@@ -15,7 +15,9 @@ export default {
 export const Basic = () => {
   return (
     <ThemeProvider theme={basicTheme}>
-      <Icon type="eye" />
+      {Object.keys(basicTheme.icons).map(iconName => (
+        <Icon type={iconName} />
+      ))}
     </ThemeProvider>
   )
 }
